@@ -44,8 +44,9 @@ function labFraction(n,d=1n){n=BigInt(n);d=BigInt(d);if(d<0n){n=-n;d=-d}const gc
 function labAdd(a,b){return labFraction(a.n*b.d+b.n*a.d,a.d*b.d)}
 function labMul(a,b){return labFraction(a.n*b.n,a.d*b.d)}
 function labText(a){return a.d===1n?String(a.n):String(a.n)+'/'+String(a.d)}
-function labMoney(a){return '
+function labMoney(a){return String.fromCharCode(36)+(Number(a.n)/Number(a.d)).toLocaleString('en-US',{maximumFractionDigits:2})}
 let voices=[],selectedVoice=null,speaking=false,narrationEnabled=false;
+labBuildScene();
 function loadVoices(){if(!('speechSynthesis'in window)){$('voiceSelect').innerHTML='<option>Voice unavailable</option>';return}voices=speechSynthesis.getVoices().filter(v=>/^en/i.test(v.lang));$('voiceSelect').innerHTML='';voices.forEach((v,i)=>{const o=document.createElement('option');o.value=i;o.textContent=v.name+' · '+v.lang;$('voiceSelect').appendChild(o)});if(!voices.length){const o=document.createElement('option');o.textContent='No English voices found';$('voiceSelect').appendChild(o)}selectedVoice=voices[0]||null}
 if('speechSynthesis'in window){loadVoices();speechSynthesis.onvoiceschanged=loadVoices}
 $('voiceSelect').addEventListener('change',()=>{selectedVoice=voices[Number($('voiceSelect').value)]||null});
@@ -108,7 +109,6 @@ function renderEvidence(name){
 function speakEvidence(name){const data=evidenceCharts[name];if(!data)return;speakText(data.title+'. '+data.description+' Key result: '+data.stat+'. '+data.statLabel+'. Source: '+data.source+'.');}
 document.querySelectorAll('.chart-tab').forEach(b=>b.addEventListener('click',()=>{renderEvidence(b.dataset.chart);if(narrationEnabled&&guided&&current===3)speakEvidence(b.dataset.chart)}));
 if($('evidence3d'))renderEvidence('learning');
-+(Number(a.n)/Number(a.d)).toLocaleString('en-US',{maximumFractionDigits:2})}
 function labBuildScene(){
  const host=$('synthesis3d');if(!host)return;
  try{
@@ -149,7 +149,6 @@ function labVerify(){
 document.querySelectorAll('.lab-step').forEach(b=>b.addEventListener('click',()=>labRenderStage(Number(b.dataset.labStep))));
 $('labReverify').addEventListener('click',labVerify);$('labPrincipal').addEventListener('change',labVerify);$('labRate').addEventListener('change',labVerify);
 $('labPlay').addEventListener('click',()=>{let i=0;labRenderStage(0);const timer=setInterval(()=>{i++;if(i>=labStages.length){clearInterval(timer);$('labPlay').textContent='↻ REPLAY DISCOVERY';return}labRenderStage(i)},2600);$('labPlay').textContent='DISCOVERY IN MOTION…'});
-labBuildScene();
 
 let voices=[],selectedVoice=null,speaking=false,narrationEnabled=false;
 function loadVoices(){if(!('speechSynthesis'in window)){$('voiceSelect').innerHTML='<option>Voice unavailable</option>';return}voices=speechSynthesis.getVoices().filter(v=>/^en/i.test(v.lang));$('voiceSelect').innerHTML='';voices.forEach((v,i)=>{const o=document.createElement('option');o.value=i;o.textContent=v.name+' · '+v.lang;$('voiceSelect').appendChild(o)});if(!voices.length){const o=document.createElement('option');o.textContent='No English voices found';$('voiceSelect').appendChild(o)}selectedVoice=voices[0]||null}
