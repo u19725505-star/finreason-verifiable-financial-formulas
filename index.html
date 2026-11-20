@@ -26,15 +26,27 @@
 <div class="progress-track"><div id="progressFill"></div></div>
 <section class="chapter intro" data-chapter="0"><div class="chapter-no">00 / THE OPENING</div><div class="chapter-grid"><div><p class="eyebrow">THE HUMAN THREAD</p><h2>Great discoveries begin<br>with <em>curiosity.</em></h2><p class="body-copy">Before the equations, a reminder: difficult problems are rarely solved alone. This short film captures a story of trust, ingenuity, and going further than expected — a human frame for the spirit of research, not evidence for the experiment.</p><div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/ayJPcBkR2is?rel=0&playsinline=1" title="Rocky and Grace — Project Hail Mary friendship" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><p class="micro">PROJECT HAIL MARY · ROCKY & GRACE · USER-PROVIDED VIDEO</p>
 <div class="evidence-deck">
- <div class="deck-heading"><span class="eyebrow">THE RESEARCH EVIDENCE · INTERACTIVE 3D ATLAS</span><h3>Now, enter the <em>data universe.</em></h3><p>These animated plots are rebuilt from the paper's published result tables. Rotate the view, switch experiments, and read what each result actually means.</p></div>
+ <div class="deck-heading"><span class="eyebrow">THE RESEARCH EVIDENCE · INTERACTIVE 3D ATLAS</span><h3>Now, enter the <em>data universe.</em></h3><p>Every view is rebuilt from the repository's CSV evidence and interpreted against the camera-ready paper. Explore all nine paper figures and the supporting result tables in a rotatable 3D evidence atlas. The paper's PDF figures remain available below.</p></div>
  <div class="chart-console">
   <div class="chart-tabs" role="group" aria-label="Select research visualization">
-   <button class="chart-tab active" data-chart="learning">01 · LEARNING CURVE</button>
-   <button class="chart-tab" data-chart="chaining">02 · STEP CHAINING</button>
-   <button class="chart-tab" data-chart="coverage">03 · TEST COMPOSITION</button>
-   <button class="chart-tab" data-chart="official">04 · OFFICIAL SCORE</button>
+   <button class="chart-tab active" data-chart="learning">01 · LEARNING</button>
+   <button class="chart-tab" data-chart="chaining">02 · CHAINING</button>
+   <button class="chart-tab" data-chart="failures">03 · FAILURES</button>
+   <button class="chart-tab" data-chart="final">04 · FINAL RESULTS</button>
+   <button class="chart-tab" data-chart="domain">05 · DOMAINS</button>
+   <button class="chart-tab" data-chart="potential">06 · HEADROOM</button>
+   <button class="chart-tab" data-chart="scaling">07 · SCALING</button>
+   <button class="chart-tab" data-chart="composition">08 · ANSWER TYPES</button>
+   <button class="chart-tab" data-chart="coverage">09 · TEST COVERAGE</button>
+   <button class="chart-tab" data-chart="main">10 · HELD-OUT TABLE</button>
+   <button class="chart-tab" data-chart="difficulty">11 · DIFFICULTY</button>
+   <button class="chart-tab" data-chart="ablation">12 · ABLATIONS</button>
+   <button class="chart-tab" data-chart="causes">13 · TEST CAUSES</button>
+   <button class="chart-tab" data-chart="operators">14 · OPERATORS</button>
+   <button class="chart-tab" data-chart="programs">15 · PROGRAM SIZE</button>
+   <button class="chart-tab" data-chart="steps">16 · STEP COUNTS</button>
   </div>
-  <div class="chart-stage"><div class="chart-stage-top"><span id="chartKicker">DEVELOPMENT SET / ANSWERED CORRECTLY</span><span class="chart-live"><i></i> 3D DATA MODEL</span></div><div id="evidence3d" aria-label="Interactive three-dimensional research chart"></div><div class="chart-legend" id="chartLegend"></div></div>
+  <div class="chart-stage"><div class="chart-stage-top"><span id="chartKicker">DEVELOPMENT SET / ANSWERED CORRECTLY</span><span class="chart-live"><i></i> 3D DATA MODEL</span></div><div id="evidence3d" aria-label="Interactive three-dimensional research chart"></div><div id="chartAxisLabels" class="chart-axis-labels" aria-hidden="true"></div><div class="chart-legend" id="chartLegend"></div></div>
   <div class="chart-explain"><div><small id="chartIndex">FIGURE 01 / 04</small><h4 id="chartTitle">More examples, stronger precision</h4><p id="chartDescription">As training examples per template increase from two to ten, correct held-out answers rise from 154 to 191. Precision among answered questions reaches 99.5 percent. Coverage remains a separate question: the system answered 192 of 290 questions.</p></div><div class="chart-stat"><span id="chartStat">99.5%</span><small id="chartStatLabel">PRECISION AT 10 EXAMPLES</small></div></div>
   <div class="data-table-wrap"><div class="table-heading"><span>UNDERLYING REPORTED DATA</span><span id="tableSource">learning_curve.csv</span></div><div id="chartTable"></div></div>
  </div>
