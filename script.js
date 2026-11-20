@@ -150,7 +150,7 @@ document.querySelectorAll('.lab-step').forEach(b=>b.addEventListener('click',()=
 $('labReverify').addEventListener('click',labVerify);$('labPrincipal').addEventListener('change',labVerify);$('labRate').addEventListener('change',labVerify);
 $('labPlay').addEventListener('click',()=>{let i=0;labRenderStage(0);const timer=setInterval(()=>{i++;if(i>=labStages.length){clearInterval(timer);$('labPlay').textContent='↻ REPLAY DISCOVERY';return}labRenderStage(i)},2600);$('labPlay').textContent='DISCOVERY IN MOTION…'});
 
-let voices=[],selectedVoice=null,speaking=false,narrationEnabled=false;
+
 function loadVoices(){if(!('speechSynthesis'in window)){$('voiceSelect').innerHTML='<option>Voice unavailable</option>';return}voices=speechSynthesis.getVoices().filter(v=>/^en/i.test(v.lang));$('voiceSelect').innerHTML='';voices.forEach((v,i)=>{const o=document.createElement('option');o.value=i;o.textContent=v.name+' · '+v.lang;$('voiceSelect').appendChild(o)});if(!voices.length){const o=document.createElement('option');o.textContent='No English voices found';$('voiceSelect').appendChild(o)}selectedVoice=voices[0]||null}
 if('speechSynthesis'in window){loadVoices();speechSynthesis.onvoiceschanged=loadVoices}
 $('voiceSelect').addEventListener('change',()=>{selectedVoice=voices[Number($('voiceSelect').value)]||null});
