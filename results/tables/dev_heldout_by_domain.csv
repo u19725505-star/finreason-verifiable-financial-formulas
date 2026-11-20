@@ -1,0 +1,13 @@
+domain,n,learn,v3,slots,slots_ok,learn_pct,v3_pct
+accounting_and_financial_reporting,20,17,5,33,30,85.0,25.0
+corporate_finance,20,11,0,42,30,55.0,0.0
+crypto_finance,35,33,2,57,53,94.3,5.7
+finance_regulation,25,7,0,42,7,28.0,0.0
+financial_markets,20,15,0,38,30,75.0,0.0
+financial_ratios,20,17,4,32,27,85.0,20.0
+fintech,15,12,0,31,27,80.0,0.0
+investment_analysis,25,8,0,65,37,32.0,0.0
+mergers_and_acquisitions,25,16,2,37,28,64.0,8.0
+personal_finance,25,22,2,37,28,88.0,8.0
+risk_management,35,24,2,53,26,68.6,5.7
+sustainable_finance,25,9,0,51,9,36.0,0.0

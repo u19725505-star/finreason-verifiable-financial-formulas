@@ -1,0 +1,8 @@
+outcome,test_questions
+Solved (learned),351
+Unseen template,256
+"Known template, no formula found",84
+Unseen template (enum),83
+"Known template, >10 numbers or variable count",61
+Solved (hand-written),55
+"Known template, enum answer",38

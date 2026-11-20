@@ -1,0 +1,6 @@
+n_train_instances,answered,correct,precision_pct,slots_correct
+2,197,154,78.2,280
+3,194,168,86.6,306
+5,193,184,95.3,326
+7,192,189,98.4,330
+10,192,191,99.5,332

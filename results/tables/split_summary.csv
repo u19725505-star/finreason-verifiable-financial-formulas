@@ -1,0 +1,5 @@
+split,questions,v3_answered,v3_correct,coverage_pct,acc_on_answered_pct,seen_template_questions,unseen_template_questions,seen_pct
+train,2900,170,170.0,5.86,100.0,2900,0,100.0
+dev,290,17,17.0,5.86,100.0,290,0,100.0
+leaderboard,580,34,,5.86,,578,2,99.7
+test,928,55,,5.93,,568,360,61.2

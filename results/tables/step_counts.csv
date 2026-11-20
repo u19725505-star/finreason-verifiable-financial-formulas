@@ -1,0 +1,17 @@
+split,n_steps,count
+dev,0,32
+dev,1,69
+dev,2,118
+dev,3,71
+leaderboard,0,64
+leaderboard,1,138
+leaderboard,2,236
+leaderboard,3,142
+test,0,64
+test,1,393
+test,2,314
+test,3,157
+train,0,320
+train,1,690
+train,2,1180
+train,3,710
