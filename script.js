@@ -134,14 +134,14 @@ function labRenderStage(i){
 }
 function labVerifyRows(){
  const p=BigInt(Math.max(1,Math.round(Number($('labPrincipal').value)||1))),rate=Number($('labRate').value);const bp=Math.max(0,Math.min(10000,Math.round(rate*100)));const r=labFraction(BigInt(bp),10000n),P=labFraction(p),I=labMul(P,r),A=labAdd(P,I);
- return [['Exact evaluation','Rational value','Decimal display'],['Rate',labText(r),(bp/100)+'%'],['Interest: P × r',labText(I),labMoney(I)],['Final: P + I',labText(A),labMoney(A)]];
+ const direct=labMul(P,labAdd(labFraction(1n),r));return [['Exact evaluation','Rational value','Decimal display'],['Rate',labText(r),(bp/100)+'%'],['Interest: P × r',labText(I),labMoney(I)],['Chained final: P + I',labText(A),labMoney(A)],['Direct check: P × (1 + r)',labText(direct),labMoney(direct)]];
 }
 function labVerify(){
  const p=BigInt(Math.max(1,Math.round(Number($('labPrincipal').value)||1))),rate=Number($('labRate').value);const bp=Math.max(0,Math.min(10000,Math.round(rate*100)));const r=labFraction(BigInt(bp),10000n),P=labFraction(p),I=labMul(P,r),A=labAdd(P,I);
- const exact=labText(I)==labText(labMul(P,r))&&labText(A)===labText(labAdd(P,I));
- $('labFormula').textContent='r = '+labText(r)+'   ·   I = '+labText(I)+'   ·   A = '+labText(A);
+ const direct=labMul(P,labAdd(labFraction(1n),r));const exact=labText(A)===labText(direct);
+ $('labFormula').textContent='r = '+labText(r)+'   ·   I = '+labText(I)+'   ·   chained A = '+labText(A)+'   ·   direct A = '+labText(direct);
  $('labResult').textContent=(exact?'✓ EXACT RATIONAL EVALUATION':'CHECK FAILED')+'  ·  '+labMoney(A);
- $('labExplanation').textContent='Using BigInt fractions: '+p+' × '+labText(r)+' = '+labText(I)+'; then '+p+' + '+labText(I)+' = '+labText(A)+'. Both operations are exact before the final currency display.';
+ $('labExplanation').textContent='Using BigInt fractions: '+p+' × '+labText(r)+' = '+labText(I)+'; chained path: '+p+' + '+labText(I)+' = '+labText(A)+'; direct path: '+p+' × (1 + '+labText(r)+') = '+labText(direct)+'. Exact equality: '+(exact?'YES':'NO')+'. This verifies the two computations agree; it does not prove the financial rule is universally correct.';
  $('labData').innerHTML='<table><tbody>'+labVerifyRows().map((row,ri)=>'<tr>'+row.map(v=>ri===0?'<th>'+v+'</th>':'<td>'+v+'</td>').join('')+'</tr>').join('')+'</tbody></table>';
  if(narrationEnabled&&guided&&current===2)speakText($('labExplanation').textContent);
 }
