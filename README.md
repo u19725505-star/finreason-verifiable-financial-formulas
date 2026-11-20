@@ -89,7 +89,7 @@ The live presentation includes a rotatable 3D formula-discovery lab with four st
 
 **Important:** the lab's simple-interest example is an explicitly illustrative teaching example, not a claim that this particular formula was recovered from the competition benchmark. It demonstrates the mechanics of expression learning, composition, and exact evaluation.
 
-For example, with principal \`$P=1,250$\` and rate \`$r=4\%=1/25$\`:
+For example, with principal $P=1,250$ and rate $r=4\%=1/25$:
 
 $$
 I=P\times r=1,250\times\frac{1}{25}=50
@@ -99,7 +99,7 @@ $$
 A=P+I=1,250+50=1,300
 $$
 
-The verification stage also compares the chained expression \`P + P × r\` with the direct expression \`P × (1 + r)\` using exact rational values. Agreement establishes arithmetic equivalence for the tested input; it does not establish that the candidate is the correct financial rule in every context.
+The verification stage also compares the chained expression $P + P \times r$ with the direct expression $P \times (1 + r)$ using exact rational values. Agreement establishes arithmetic equivalence for the tested input; it does not establish that the candidate is the correct financial rule in every context.
 
 [**Launch the interactive 3D demonstration →**](https://u19725505-star.github.io/finreason-verifiable-financial-formulas/)
 
